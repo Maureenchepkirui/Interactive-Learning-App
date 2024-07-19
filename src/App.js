@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Quizzes from './Components/Quizzes';
@@ -12,12 +12,12 @@ const App = () => {
     <AuthProvider>
       <Router>
         <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/quizzes" component={Quizzes} />
-          <Route path="/flashcards" component={Flashcards} />
-          <Route path="/login" component={Login} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quizzes" element={<Quizzes />} />
+          <Route path="/flashcards" element={<Flashcards />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </Router>
     </AuthProvider>
   );
