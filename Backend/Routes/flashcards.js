@@ -1,16 +1,29 @@
 const express = require('express');
-const auth = require('../Middleware/auth');
-
 const router = express.Router();
+const Flashcard = require('../models/Flashcard');
+const authMiddleware = require('../Middleware/authMiddleware');
 
-router.get('/', auth, (req, res) => {
-  // Retrieve flashcards
-  res.send({ message: 'List of flashcards' });
+// Create a flashcard
+router.post('/', authMiddleware, async (req, res) => {
+  try {
+    const flashcard = new Flashcard(req.body);
+    await flashcard.save();
+    res.status(201).json(flashcard);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
-router.post('/', auth, (req, res) => {
-  // Create a new flashcard
-  res.send({ message: 'Flashcard created' });
+// Get all flashcards
+router.get('/', async (req, res) => {
+  try {
+    const flashcards = await Flashcard.find();
+    res.status(200).json(flashcards);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
+
+// Other CRUD operations...
 
 module.exports = router;
