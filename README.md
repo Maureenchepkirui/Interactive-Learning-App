@@ -1,6 +1,8 @@
-# Interactive Learning App
+**# Interactive Learning App
 
-**Welcome to the Interactive Learning App!** This application is designed to provide an engaging and interactive learning experience with features such as quizzes, flashcards, and other educational activities.
+**Welcome to the Interactive Learning App!** 
+
+This application is designed to provide an engaging and interactive learning experience with features such as quizzes, flashcards, and other educational activities.
 
 ## About the App
 
@@ -25,3 +27,50 @@ The application is built using a modern technology stack to ensure a smooth and 
 
    ```bash
    git clone https://github.com/Maureenchepkirui/Interactive-Learning-App.git
+
+2. **Navigate to the Backend Directory**
+
+   ```bash
+   cd Interactive-Learning-App/Backend
+
+3. **Install Dependencies**
+
+   ```bash
+   npm install
+
+4. **Start MongoDB :Ensure that MongoDB is running. Open a new terminal and start MongoDB using:**
+
+   ```bash
+   mongod
+
+
+5. **Start the Backend Server**
+
+   ```bash
+   node server.js
+
+### Frontend Setup
+1. **Navigate to the Frontend Directory**
+
+   ```bash
+   cd ../scr
+2. **Install Dependencies**
+
+   ```bash
+   npm install
+3. **Start the React Development Server**
+
+   ```bash
+   npm start
+
+The frontend should now be accessible at http://localhost:3000.
+
+ **Contact Information**
+
+Name: Maureen Chepkirui
+Email: maurenchepkirui005@gmail.com
+Phone Number: 0717452789
+
+**Contribution**
+
+This project was developed by Maureen Chepkirui.Contributions and feedback are welcome.
