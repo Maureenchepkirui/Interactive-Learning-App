@@ -65,6 +65,11 @@ The application is built using a modern technology stack to ensure a smooth and 
 
 The frontend should now be accessible at http://localhost:3000.
 
+## Database Screenshot
+Here is a screenshot of the MongoDB database setup for this app:
+
+![Database Screenshot](/DATABASE.PNG)
+
  **Contact Information**
 
 Name: Maureen Chepkirui
