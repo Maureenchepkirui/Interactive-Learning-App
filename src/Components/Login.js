@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../Context/AuthContext';
+import AuthContext from '../Context/AuthContext'; // Correct import
 
 const Login = () => {
   const [username, setUsername] = useState('');
