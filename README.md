@@ -70,8 +70,16 @@ Here is a screenshot of the MongoDB database setup for this app:
 
 ![Database Screenshot](/DATABASE.PNG)
 
- **Contact Information**
+## REACT APP Screenshot
+Here is a screenshot of the React App after successfull compilation:
 
+![REACT APP Screenshot](/HOME.PNG)
+ **Contact Information**
+## Compilation Screenshot
+Here is a screenshot of the successfull compilation:
+
+![CompilationScreenshot](/FRONT.PNG)
+ **Contact Information**
 Name: Maureen Chepkirui
 Email: maurenchepkirui005@gmail.com
 Phone Number: 0717452789
