@@ -79,9 +79,12 @@ Here is a screenshot of the React App after successfull compilation:
 Here is a screenshot of the successfull compilation:
 
 ![CompilationScreenshot](/FRONT.PNG)
+ 
  **Contact Information**
+
 Name: Maureen Chepkirui
 Email: maurenchepkirui005@gmail.com
+
 Phone Number: 0717452789
 
 **Contribution**
