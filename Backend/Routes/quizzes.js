@@ -1,16 +1,29 @@
 const express = require('express');
-const auth = require('../Middleware/auth');
-
 const router = express.Router();
+const Quiz = require('../models/quiz');
+const authMiddleware = require('../Middleware/authMiddleware');
 
-router.get('/', auth, (req, res) => {
-  // Retrieve quizzes
-  res.send({ message: 'List of quizzes' });
+// Create a quiz
+router.post('/', authMiddleware, async (req, res) => {
+  try {
+    const quiz = new Quiz(req.body);
+    await quiz.save();
+    res.status(201).json(quiz);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
 
-router.post('/', auth, (req, res) => {
-  // Create a new quiz
-  res.send({ message: 'Quiz created' });
+// Get all quizzes
+router.get('/', async (req, res) => {
+  try {
+    const quizzes = await Quiz.find();
+    res.status(200).json(quizzes);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 });
+
+// Other CRUD operations...
 
 module.exports = router;
