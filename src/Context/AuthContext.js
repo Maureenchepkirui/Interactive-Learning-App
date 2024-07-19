@@ -1,32 +1,27 @@
 import React, { createContext, useState, useEffect } from 'react';
-import api from '../API/api';
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode'; // Correct import for named export
 
+const AuthContext = createContext(); // Create context
 
-
-const AuthContext = createContext();
-
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      const decodedToken = jwt_decode(token);
-      setUser(decodedToken);
+      try {
+        const decoded = jwtDecode(token); // Correct usage of named export
+        setUser(decoded);
+      } catch (error) {
+        console.error("Invalid token", error);
+      }
     }
   }, []);
 
-  const login = async (username, password) => {
-    try {
-      const response = await api.post('/auth/login', { username, password });
-      const { token } = response.data;
-      localStorage.setItem('token', token);
-      const decodedToken = jwt_decode(token);
-      setUser(decodedToken);
-    } catch (error) {
-      console.error('Login error:', error);
-    }
+  const login = (token) => {
+    localStorage.setItem('token', token);
+    const decoded = jwtDecode(token); // Correct usage of named export
+    setUser(decoded);
   };
 
   const logout = () => {
@@ -41,4 +36,4 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-export { AuthContext, AuthProvider };
+export default AuthContext; // Export context
