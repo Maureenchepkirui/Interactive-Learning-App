@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const authRoutes = require('./routes/auth');
-const quizRoutes = require('./routes/quizzes');
-const flashcardRoutes = require('./routes/flashcards');
+const authRoutes = require('./Routes/auth');
+const quizRoutes = require('./Routes/quizzes');
+const flashcardRoutes = require('./Routes/flashcards');
 
 const app = express();
 
