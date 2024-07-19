@@ -1,4 +1,4 @@
-**# Interactive Learning App
+### Interactive Learning App
 
 **Welcome to the Interactive Learning App!** 
 
