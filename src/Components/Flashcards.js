@@ -7,7 +7,7 @@ const Flashcards = () => {
   useEffect(() => {
     const fetchFlashcards = async () => {
       try {
-        const response = await api.get('/Flashcards');
+        const response = await api.get('/flashcards');
         setFlashcards(response.data);
       } catch (error) {
         console.error('Error fetching flashcards:', error);
